@@ -64,7 +64,9 @@ module.exports = {
 
   async getMessages(filter) {
     try {
-      return await Message.find(filter).sort({ createdAt: 1 }).exec();
+      return await Message.find(filter)
+      //.sort({ createdAt: 1 })
+      .exec();
     } catch (err) {
       console.error(`Error getting messages: ${err}`);
       throw new Error('Failed to get messages.');
