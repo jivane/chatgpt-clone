@@ -9,6 +9,7 @@ function log({ title, parameters }) {
 }
 
 const requireLocalAuth = (req, res, next) => {
+  console.log('requireLocalAuth',req.originalUrl);
   passport.authenticate('local', (err, user, info) => {
     if (err) {
       log({

@@ -16,6 +16,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const clientUrl = isProduction ? process.env.CLIENT_URL_PROD : process.env.CLIENT_URL_DEV;
 
 const loginUser = async (user) => {
+  console.log('loginUser',user);
   // const refreshToken = req.user.generateRefreshToken();
   const dbUser = await User.findById(user._id);
   //todo: save refresh token
